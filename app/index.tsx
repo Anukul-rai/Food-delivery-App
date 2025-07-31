@@ -1,4 +1,5 @@
 import { Text, View } from "react-native";
+import Homescreen from "./homescreen";
 
 export default function Index() {
   return (
@@ -9,7 +10,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>My new app for Food delivery</Text>
+      <Homescreen/>
     </View>
   );
 }
