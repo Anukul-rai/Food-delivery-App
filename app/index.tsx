@@ -1,16 +1,11 @@
-import { Text, View } from "react-native";
+import { SafeAreaView, StatusBar } from "react-native";
 import Homescreen from "./homescreen";
 
 export default function Index() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Homescreen/>
-    </View>
+    <SafeAreaView style={{flex: 1,backgroundColor:'#d5d1d1'}}>
+      <StatusBar barStyle='light-content'/>
+        <Homescreen/>
+    </SafeAreaView>
   );
 }
