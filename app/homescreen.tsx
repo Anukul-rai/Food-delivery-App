@@ -2,6 +2,8 @@ import { StyleSheet, Text, View, TextInput, ScrollView } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import React from 'react'
 import Categories from '@/components/Categories'
+import { featured } from '@/constants'
+import FeaturedRow from '@/components/FeaturedRow'
 
 export default function Homescreen() {
     return (
@@ -31,8 +33,20 @@ export default function Homescreen() {
                 <Categories />
 
                 {/* featued */}
-                <View>
-                    
+                <View style={{marginTop:5}}>
+                    {
+                        [featured,featured,featured].map((item,index)=>{
+                            return(
+                                <FeaturedRow
+                                key={index}
+                                title={item.title}
+                                restaurants={item.restaurants}
+                                description={item.description}
+                                />
+                            )
+                        })
+                    }
+
                 </View>
 
                 
