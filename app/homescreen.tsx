@@ -80,7 +80,6 @@ const styles = StyleSheet.create({
     },
     searchText: {
         fontSize: 16,
-        // flex: 1,
         color: 'black',
     },
     leftSearch: {
