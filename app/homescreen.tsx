@@ -27,7 +27,15 @@ export default function Homescreen() {
 
             {/* Main content */}
             <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
+                {/* categories */}
                 <Categories />
+
+                {/* featued */}
+                <View>
+                    
+                </View>
+
+                
             </ScrollView>
         </View>
     )
@@ -35,13 +43,14 @@ export default function Homescreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#d5d1d1',
+        backgroundColor: '#e2f4c9',
     },
     searchWrapper: {
         flexDirection: 'row',
         alignItems: 'center',
         paddingHorizontal: 8,
         paddingTop: 10,
+        backgroundColor:'#edecec'
     },
     searchView: {
         flex: 1,
@@ -52,10 +61,12 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         gap: 6,
         alignItems: 'center',
+        borderWidth:1,
+        borderColor:'#cac7c7'
     },
     searchText: {
         fontSize: 16,
-        flex: 1,
+        // flex: 1,
         color: 'black',
     },
     leftSearch: {
@@ -63,7 +74,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderLeftWidth: 1,
         borderColor: 'gray',
-        paddingLeft: 6,
+        paddingLeft: 1,
         gap: 4,
     },
     locationText: {
@@ -79,5 +90,6 @@ const styles = StyleSheet.create({
     scrollContent: {
         paddingHorizontal: 10,
         paddingVertical: 12,
+        backgroundColor:'#edecec'
     },
 })
