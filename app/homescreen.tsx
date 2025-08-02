@@ -6,7 +6,7 @@ import Categories from '@/components/Categories'
 export default function Homescreen() {
     return (
         <View style={styles.container}>
-            {/* Search Bar with Filter */}
+            {/* Search bar */}
             <View style={styles.searchWrapper}>
                 <View style={styles.searchView}>
                     <Ionicons name="search" size={24} color="gray" />
@@ -25,7 +25,7 @@ export default function Homescreen() {
                 </View>
             </View>
 
-            {/* Scrollable Content */}
+            {/* Main content */}
             <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
                 <Categories />
             </ScrollView>
