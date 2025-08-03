@@ -1,6 +1,7 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 import { Ionicons } from '@expo/vector-icons';
+import { router, useNavigation } from 'expo-router';
 
 interface Restaurant {
   id: number;
@@ -10,11 +11,16 @@ interface Restaurant {
   reviews: number;
   category: string;
   description: string;
+  address:string;
 }
 
 export default function RestaurantsCard({ item }: { item: Restaurant }) {
+  
   return (
-    <TouchableOpacity activeOpacity={0.8} style={styles.cardContainer}>
+    <TouchableOpacity 
+    onPress={() => router.push({ pathname: '/resturant', params: { ...item } })}
+    activeOpacity={0.8} 
+    style={styles.cardContainer}>
       <Image source={item.image} style={styles.image} />
       <View style={styles.infoContainer}>
         <Text style={styles.restaurantName}>{item.name}</Text>
@@ -26,7 +32,11 @@ export default function RestaurantsCard({ item }: { item: Restaurant }) {
           <Text style={styles.categoryText}>• {item.category}</Text>
         </View>
 
-        <Text style={styles.description}>{item.description}</Text>
+        <Text style={styles.description} numberOfLines={2} adjustsFontSizeToFit={true}>{item.description}</Text>
+        <View style={styles.locContainer}>
+          <Ionicons name='location' size={18} color={'red'}/>
+          <Text style={styles.locationText}>Nearby. {item.address}</Text>
+        </View>
       </View>
     </TouchableOpacity>
   );
@@ -85,4 +95,12 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: '#444',
   },
+  locContainer:{
+    flexDirection:'row',
+    alignItems:'center',
+    marginTop:4
+  },
+  locationText:{
+    fontSize:12,
+  }
 });

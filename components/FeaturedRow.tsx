@@ -35,7 +35,7 @@ export default function FeaturedRow({ title, restaurants, description }: Feature
         contentContainerStyle={styles.scrollContent}
         style={styles.scrollView}
       >
-        {restaurants.map((restaurant) => (
+        {restaurants.map((restaurant: any) => (
           <RestaurantsCard key={restaurant.id} item={restaurant} />
         ))}
       </ScrollView>
