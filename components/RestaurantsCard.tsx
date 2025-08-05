@@ -18,7 +18,7 @@ export default function RestaurantsCard({ item }: { item: Restaurant }) {
   
   return (
     <TouchableOpacity 
-    onPress={() => router.push({ pathname: '/resturant', params: { ...item } })}
+    onPress={() => router.push({ pathname: '/resturant', params: { id: item.id.toString() } })}
     activeOpacity={0.8} 
     style={styles.cardContainer}>
       <Image source={item.image} style={styles.image} />
